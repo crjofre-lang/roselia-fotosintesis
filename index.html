@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Roselia: Misión Fotosíntesis</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+    <section id="game-shell" aria-label="Roselia: Misión Fotosíntesis">
+      <canvas id="game" width="1280" height="720" aria-label="Zona de juego"></canvas>
+
+      <div id="hud" class="hidden">
+        <div class="hud-card mission-card">
+          <span class="eyebrow">MISIÓN ACTUAL</span>
+          <strong id="mission-title">El agua perdida</strong>
+          <span id="mission-objective">Encuentra 3 gotas de agua.</span>
+        </div>
+
+        <div class="hud-card resources" aria-label="Recursos">
+          <span id="water-hud">💧 0/3</span>
+          <span id="co2-hud">CO₂ 0/3</span>
+          <span id="light-hud">☀️ 0/3</span>
+        </div>
+
+        <div class="hud-card timer-card hidden" id="timer-card">
+          <span class="eyebrow">TIEMPO</span>
+          <strong id="timer">30</strong>
+        </div>
+      </div>
+
+      <div id="dialogue" class="dialogue hidden" role="status" aria-live="polite">
+        <div class="portrait">🌿</div>
+        <div>
+          <strong>Roselia</strong>
+          <p id="dialogue-text"></p>
+        </div>
+      </div>
+
+      <div id="interaction" class="interaction hidden">E — Interactuar</div>
+      <div id="banner" class="banner hidden"></div>
+
+      <section id="start-screen" class="screen-overlay">
+        <div class="title-card">
+          <div class="logo-mark">🌿</div>
+          <p class="kicker">AVENTURA ECOLÓGICA</p>
+          <h1>ROSELIA</h1>
+          <h2>MISIÓN FOTOSÍNTESIS</h2>
+          <p class="tagline">“Todo está conectado.”</p>
+          <button id="play-btn" class="primary-btn">JUGAR</button>
+          <p class="controls-hint">Mover: WASD / flechas · Interactuar: E</p>
+        </div>
+      </section>
+
+      <section id="end-screen" class="screen-overlay hidden">
+        <div class="title-card end-card">
+          <p class="kicker">MISIÓN COMPLETADA</p>
+          <h2>¡LA PLANTA SE RECUPERÓ!</h2>
+          <div class="equation">
+            <span>💧 Agua</span><b>+</b><span>CO₂</span><b>+</b><span>☀️ Luz</span>
+            <b>→</b><span>🌿 Fotosíntesis</span><b>→</b><span>🍬 Glucosa + 💨 Oxígeno</span>
+          </div>
+          <p class="final-quote">Roselia: “Todo está conectado.”</p>
+          <button id="replay-btn" class="primary-btn">JUGAR OTRA VEZ</button>
+        </div>
+      </section>
+
+      <div id="touch-controls" class="touch-controls hidden" aria-label="Controles táctiles">
+        <button data-key="ArrowUp">▲</button>
+        <div>
+          <button data-key="ArrowLeft">◀</button>
+          <button data-key="ArrowDown">▼</button>
+          <button data-key="ArrowRight">▶</button>
+        </div>
+        <button id="touch-action" class="action-btn">E</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
